@@ -1,0 +1,137 @@
+server:
+  port: 8001
+
+spring:
+  profiles:
+    active: dev
+  cache:
+    cache-names: myCache
+
+logging:
+  level:
+    tk.mybatis: TRACE
+    com.template: debug
+
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.template.pojo
+#  configuration:
+#    cache-enabled: false
+
+#mapper:
+#  mappers:
+#  - com.template.dao.util.MyMapper
+#  not-empty: false
+#  identity: MYSQL
+
+md5:
+  sign_str: J1238DFDFdfsQTW90234HJASDFJKL23172fghssdgsHJ41N4139013HIJO1
+
+temp:
+  machineId: 1
+
+---  # 开发环境
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://v2it:3306/xqq?characterEncoding=utf-8&useSSL=false&useUnicode=true
+    username: root
+    password: 199453win
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    dbcp2:
+      initial-size: 5
+      max-wait-millis: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+  redis:
+    database: 9
+    redis-1:
+      host: v2it.cn
+      port: 6379
+      password: test
+    redis-2:
+      host: v2it.cn
+      port: 6379
+      password: test
+    redis-3:
+      host: v2it.cn
+      port: 6379
+      password: test
+
+---  # 测试环境
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:mysql://v2it:3306/xqq?characterEncoding=utf-8&useSSL=false&useUnicode=true
+    username: root
+    password: 199453win
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    dbcp2:
+      initial-size: 5
+      max-wait-millis: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+  redis:
+    database: 9
+    redis-1:
+      host: v2it.cn
+      port: 6379
+      password: test
+    redis-2:
+      host: v2it.cn
+      port: 6379
+      password: test
+    redis-3:
+      host: v2it.cn
+      port: 6379
+      password: test
+
+
+---  # 生产环境
+spring:
+  profiles: prod
+  datasource:
+    url: jdbc:mysql://v2it:3306/xqq?characterEncoding=utf-8&useSSL=false&useUnicode=true
+    username: root
+    password: 199453win
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    dbcp2:
+      initial-size: 5
+      max-wait-millis: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+  redis:
+    database: 9
+    redis-1:
+      host: v2it.cn
+      port: 6379
+      password: test
+    redis-2:
+      host: v2it.cn
+      port: 6379
+      password: test
+    redis-3:
+      host: v2it.cn
+      port: 6379
+      password: test
+
+
+
